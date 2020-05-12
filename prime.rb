@@ -1,12 +1,12 @@
-def prime?(numbers)
-  n=2
-  while n < numbers
-    if numbers % n ==0
-      false
-    else
-      true
+def prime?(num)
+  return false if !num.integer?
 
-    end
+  return false if num < 2
 
-  end
+  return true if num == 2
+
+  (2..num - 1).each {|n| return false if num % n == 0}
+
+  true
+
 end
